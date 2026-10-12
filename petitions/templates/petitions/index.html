@@ -1,0 +1,12 @@
+{% extends "petitions/base.html" %}
+{% block content %}
+<h1>Depune o sesizare</h1>
+<p>Alege primăria căreia vrei să-i trimiți sesizarea:</p>
+<ul>
+  {% for m in municipalities %}
+    <li><a href="{% url 'petitions:submit' m.slug %}">{{ m.name }}</a></li>
+  {% empty %}
+    <li>Nicio primărie configurată încă.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
