@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}OpenSesizare{% endblock %}</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #1a1a1a; }
+    label { display: block; font-weight: 600; margin-top: 1rem; }
+    input, textarea { width: 100%; padding: .5rem; font: inherit; box-sizing: border-box; }
+    button { margin-top: 1.5rem; padding: .6rem 1.2rem; font: inherit; cursor: pointer; }
+    .errorlist { color: #b00020; padding-left: 1rem; }
+    .muted { color: #555; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="muted"><p>OpenSesizare – software open-source (AGPL-3.0)</p></footer>
+</body>
+</html>
