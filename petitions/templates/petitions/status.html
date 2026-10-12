@@ -1,0 +1,11 @@
+{% extends "petitions/base.html" %}
+{% block title %}Stadiul sesizării{% endblock %}
+{% block content %}
+<h1>Stadiul sesizării</h1>
+<p><strong>Primăria:</strong> {{ petition.municipality.name }}</p>
+<p><strong>Subiect:</strong> {{ petition.subject }}</p>
+<p><strong>Număr de înregistrare:</strong> {{ petition.registry_label }}</p>
+<p><strong>Stadiu:</strong> {{ petition.get_status_display }}</p>
+<p><strong>Termen legal de răspuns:</strong> {{ petition.due_date|date:"d.m.Y" }}</p>
+<p class="muted">Păstrează adresa acestei pagini ca să poți urmări sesizarea.</p>
+{% endblock %}
