@@ -1,0 +1,17 @@
+{% extends "petitions/base.html" %}
+{% block title %}Sesizare – {{ municipality.name }}{% endblock %}
+{% block content %}
+<h1>Sesizare către {{ municipality.name }}</h1>
+<p class="muted">Nu ai nevoie de cont. Datele de contact sunt cerute de lege pentru înregistrarea sesizării.</p>
+<form method="post" novalidate>
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {% for field in form.visible_fields %}
+    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    {{ field }}
+    {{ field.errors }}
+  {% endfor %}
+  {% for field in form.hidden_fields %}{{ field }}{% endfor %}
+  <button type="submit">Trimite sesizarea</button>
+</form>
+{% endblock %}
